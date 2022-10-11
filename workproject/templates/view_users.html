@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <table name="user_table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Date of birth</th>
+            <th>Action</th>
+        </tr>
+        {% for user in all_users %} 
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.date_of_birth}}</td>
+                <td>
+                    <a href='/delete_user_form/{{user.id}}'>Delete</a>
+                        <br>
+                    <a href='/edit_user_form/{{user.id}}'>Edit</a>
+                    <br>
+                    <a href='/add_comment_form/{{user.id}}'>Add a comment</a>
+                
+                </td>
+                <p><br></p>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/">
+        <button>Go home</button>
+    </a>
+{% endblock %}

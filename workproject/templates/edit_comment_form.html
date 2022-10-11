@@ -1,0 +1,9 @@
+<!doctype html>
+<html>
+    <h1>Edit a comment</h1>
+    <form action="/edit_comment_submitted/{{comment_to_edit.id}}" method="post">
+        <label>Enter a new comment content</label>
+        <input name="content" type="text" value="{{comment_to_edit.content}}" required>
+        <input type="submit">
+    </form>
+</html>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Comment content</th>
+            <th>User ID</th>
+            <th>Action</th>
+        </tr>
+        {% for comment in comments %}
+            <tr>
+                <td>{{comment.id}}</td>
+                <td>{{comment.content}}</td>
+                <td>{{comment.user_id}}</td>
+                <td>
+                    <a href='/delete_comment_form/{{comment.id}}'>Delete comment</a>
+                        <br>
+                    <a href='/edit_comment_form/{{comment.id}}'>Edit comment</a>
+                    <br>                
+                </td>
+                <p><br></p>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/">
+        <button>Go home</button>
+    </a>
+{% endblock %}

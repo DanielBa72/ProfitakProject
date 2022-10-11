@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+    <h1>Edit a user</h1>
+    <form action="/edit_user_submitted/{{user.id}}" method="post">
+        <label>Enter a new name or a new date of birth</label>
+        <input name="name" type="text" value="{{user.name}}">
+        <input name="date_of_birth" type="date" value="{{user.date_of_birth}}">
+        <input type="submit">
+    </form>
+</html>
